@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 3px solid #2f6dff;
+  outline-offset: 2px;
+}
+
+/* Tables */
+.table {
+  @apply w-full border-collapse text-sm;
+}
+.table th {
+  @apply text-left font-semibold text-slate-700 border-b border-slate-200 px-3 py-2;
+}
+.table td {
+  @apply border-b border-slate-100 px-3 py-2 align-top;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+}
+.badge-critical { @apply bg-red-100 text-red-800; }
+.badge-high { @apply bg-red-200 text-red-900; }
+.badge-medium { @apply bg-yellow-100 text-yellow-800; }
+.badge-low { @apply bg-green-100 text-green-800; }
+.badge-info { @apply bg-sky-100 text-sky-800; }
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm hover:bg-slate-50 active:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply border-brand-600 bg-brand-600 text-white hover:bg-brand-700;
+}
+
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/40;
+}
+.modal-panel {
+  @apply fixed inset-x-4 top-20 z-50 mx-auto max-w-2xl rounded-lg bg-white p-4 shadow-xl ring-1 ring-black/5;
+}
